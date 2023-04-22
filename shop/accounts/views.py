@@ -83,7 +83,7 @@ class CanselDeactivateUserView(APIView):
         user.is_active = True
         user.save()
         return Response("your account will activated.")
-
+# gonnacheck one by one
 
 class LoginAPIView(LoginView):
     queryset = ""
