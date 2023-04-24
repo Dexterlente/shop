@@ -27,7 +27,7 @@ from core.handle_images import compress_image
 # gonna put comments
 User = get_user_model()
 
-
+# directory path
 def user_directory_path(instance, filename):
     # file will be uploaded to MEDIA_ROOT/users/<username>/<filename>
     return "users/{0}/{1}".format(instance.user.username, filename)
@@ -36,7 +36,7 @@ def user_directory_path(instance, filename):
 def national_image_path(instance, filename):
     return f"national/{instance.user.username}/images/{filename}"
 
-
+# profile models
 class Profile(TimeStampedModel):
     GENDER_MALE = "m"
     GENDER_FEMALE = "f"
