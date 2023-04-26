@@ -37,6 +37,7 @@ def user_directory_path(instance, filename):
 def national_image_path(instance, filename):
     return f"national/{instance.user.username}/images/{filename}"
 
+# time stamped model
 # profile models
 class Profile(TimeStampedModel):
     GENDER_MALE = "m"
