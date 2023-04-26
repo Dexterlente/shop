@@ -26,6 +26,7 @@ from core.handle_images import compress_image
 
 # gonna put comments
 User = get_user_model()
+# change to abstractuser
 
 # directory path
 def user_directory_path(instance, filename):
