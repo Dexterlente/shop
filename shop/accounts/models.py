@@ -25,8 +25,10 @@ from core.models import TimeStampedModel
 from core.handle_images import compress_image
 
 # gonna put comments
-User = get_user_model()
+# User = get_user_model()
 # change to abstractuser
+class User (AbstractUser):
+    pass
 
 # directory path
 def user_directory_path(instance, filename):
