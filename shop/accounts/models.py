@@ -71,6 +71,7 @@ class Profile(TimeStampedModel):
     @property
     def online(self):
         if self.last_seen:
+            # on settings below 10 minutes still considered online
             now = datetime.now(timezone.utc)
             if now > self.last_seen + timedelta(minutes=settings.USER_ONLINE_TIMEOUT):
                 return False
