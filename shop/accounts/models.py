@@ -65,6 +65,7 @@ class Profile(TimeStampedModel):
 
     @property
     def last_seen(self):
+        # Retrieves the last seen datetime for this user from the cache using a key composed of the string "seen_" and the user's username
         return cache.get(f"seen_{self.user.username}")
 
     @property
