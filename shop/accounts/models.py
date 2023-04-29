@@ -85,9 +85,19 @@ class Profile(TimeStampedModel):
 
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, *args, **kwargs):
+    # profile model is created when user is save
     if created:
         Profile.objects.create(user=instance)
 
+@receiver(post_save, sender=User)
+def save_user_profile(sender, instance, *args, **kwargs):
+    # profile is updated if there is update on the user
+    try:
+        # profile is User oneistoone field related name
+        instance.profile.save() 
+    # if user has no profile it was created
+    except Profile.DoesNotExist:
+        Profile.objects.create(user=instance)
 
 class Address(TimeStampedModel):
     user = models.ForeignKey(User, related_name="address", on_delete=models.CASCADE)
