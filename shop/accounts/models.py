@@ -60,7 +60,8 @@ class Profile(TimeStampedModel):
     birth_date = models.DateField(blank=True, null=True)
 
     def __str__(self):
-        return "%s" % self.user.username
+        # return "%s" % self.user.username // im using react so this was not needed
+        return self.user.username
 
     @property
     def last_seen(self):
