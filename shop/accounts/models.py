@@ -75,8 +75,10 @@ class Profile(TimeStampedModel):
             now = datetime.now(timezone.utc)
             if now > self.last_seen + timedelta(minutes=settings.USER_ONLINE_TIMEOUT):
                 return False
+                # else offline
             else:
                 return True
+        # else offline
         else:
             return False
 
