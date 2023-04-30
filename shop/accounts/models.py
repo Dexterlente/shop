@@ -139,7 +139,7 @@ class SMSVerification(TimeStampedModel):
                     settings.TWILIO_ACCOUNT_SID, settings.TWILIO_AUTH_TOKEN
                 )
                 twilio_client.messages.create(
-                    body="Your forgeter activation code is %s" % self.pin,
+                    body="Your activation code is %s" % self.pin,
                     to=str(self.user.profile.phone_number),
                     from_=settings.TWILIO_FROM_NUMBER,
                 )
