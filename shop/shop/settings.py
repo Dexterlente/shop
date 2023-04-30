@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     # django rest framework
     'rest_framework',
     'rest_framework.authtoken',
@@ -51,12 +52,16 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'rest_auth.registration',
+    'rest_auth',
+    'django_filters',
+
     'django_countries',
     'randompinfield',
     'drf_extra_fields',
+
     'allauth.socialaccount.providers.google',
     'allauth.socialaccount.providers.facebook',
-    'django.contrib.sites',
 ]
 
 MIDDLEWARE = [
@@ -168,3 +173,5 @@ ACCOUNT_UNIQUE_EMAIL = True
 ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_USER_MODEL_USERNAME_FIELD = None
 ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 1
+# mutiple
+SITE_ID=1
