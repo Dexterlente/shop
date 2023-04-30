@@ -28,7 +28,6 @@ urlpatterns = [
     path("", include("rest_auth.urls")),
     path("registration/", views.RegisterAPIView.as_view(), name="account_signup"),
     path("registration/", include("rest_auth.registration.urls")),
-    path('accounts/', include('allauth.urls')),
     path("logout/", LogoutView.as_view(), name="rest_logout"),
     path(
         "account-confirm-email/sent/",
