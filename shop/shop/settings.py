@@ -54,6 +54,9 @@ INSTALLED_APPS = [
     'django_countries',
     'randompinfield',
     'drf_extra_fields',
+    'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.facebook',
+    'django.contrib.sites',
 ]
 
 MIDDLEWARE = [
