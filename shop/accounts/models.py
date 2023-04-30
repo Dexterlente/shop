@@ -222,3 +222,5 @@ class NationalIDImage(models.Model):
         if image and image.size > (0.3 * 1024 * 1024):
             self.image = compress_image(image)
         super(NationalIDImage, self).save(*args, **kwargs)
+
+        # Done for now
