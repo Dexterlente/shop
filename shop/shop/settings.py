@@ -46,6 +46,14 @@ INSTALLED_APPS = [
     'corsheaders',
     # application
     'api.apps.ApiConfig',
+    # install
+    'phonenumber_field',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'django_countries',
+    'randompinfield',
+    'drf_extra_fields',
 ]
 
 MIDDLEWARE = [
@@ -143,3 +151,16 @@ TWILIO_FROM_NUMBER = os.environ.get('TWILIO_FROM_NUMBER')
 # on development change this on prod
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
+# configure allauth
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_UNIQUE_EMAIL = True
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_USER_MODEL_USERNAME_FIELD = None
+ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 1
