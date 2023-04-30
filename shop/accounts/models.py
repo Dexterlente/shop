@@ -18,6 +18,8 @@ from randompinfield import RandomPinField
 import phonenumbers
 from twilio.rest import Client
 from twilio.base.exceptions import TwilioRestException
+from django.contrib.auth.models import AbstractUser
+
 
 from .signals import register_signal
 from .managers import NationalIDImageManager
