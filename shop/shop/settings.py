@@ -140,6 +140,6 @@ TWILIO_ACCOUNT_SID = os.environ.get('TWILIO_ACCOUNT_SID')
 TWILIO_AUTH_TOKEN = os.environ.get('TWILIO_AUTH_TOKEN')
 TWILIO_FROM_NUMBER = os.environ.get('TWILIO_FROM_NUMBER')
 
-# on development change in prod
+# on development change this on prod
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
