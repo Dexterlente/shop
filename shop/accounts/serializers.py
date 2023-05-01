@@ -15,7 +15,7 @@ from .models import Profile, Address, SMSVerification, DeactivateUser, NationalI
 # Get the UserModel
 UserModel = get_user_model()
 
-
+# checked
 class LoginSerializer(serializers.Serializer):
     username = serializers.CharField(required=False, allow_blank=True)
     password = serializers.CharField(style={"input_type": "password"})
