@@ -61,7 +61,7 @@ class LoginSerializer(serializers.Serializer):
             raise exceptions.ValidationError(msg)
 
         return user
-# good
+# good i dont know
     def validate(self, attrs):
         username = attrs.get("username")
         password = attrs.get("password")
