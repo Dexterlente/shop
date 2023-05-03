@@ -33,7 +33,7 @@ class LoginSerializer(serializers.Serializer):
             raise exceptions.ValidationError(msg)
 
         return user
-# good
+
     def _validate_username(self, username, password):
         user = None
 
@@ -46,7 +46,7 @@ class LoginSerializer(serializers.Serializer):
             raise exceptions.ValidationError(msg)
 
         return user
-# good
+
     def _validate_username_email(self, username, email, password):
         user = None
 
@@ -61,7 +61,7 @@ class LoginSerializer(serializers.Serializer):
             raise exceptions.ValidationError(msg)
 
         return user
-# good i dont know
+
     def validate(self, attrs):
         username = attrs.get("username")
         password = attrs.get("password")
