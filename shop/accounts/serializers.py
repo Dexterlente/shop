@@ -205,7 +205,7 @@ class ProfileSerializer(serializers.ModelSerializer):
     """
     TODO update profile and if phone Number not verified user can't update in his profile.
     """
-
+# checked
 
 class UserSerializer(serializers.ModelSerializer):
     profile_picture = serializers.ImageField(source="profile.profile_picture")
