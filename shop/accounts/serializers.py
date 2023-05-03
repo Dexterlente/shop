@@ -64,6 +64,7 @@ class LoginSerializer(serializers.Serializer):
 
     def validate(self, attrs):
         username = attrs.get("username")
+        email = attrs.get("email")
         password = attrs.get("password")
 
         user = None
@@ -135,7 +136,7 @@ class LoginSerializer(serializers.Serializer):
 
         attrs["user"] = user
         return attrs
-
+# checked till this line
 
 class DeactivateUserSerializer(serializers.ModelSerializer):
     class Meta:
