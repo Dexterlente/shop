@@ -21,6 +21,7 @@ from allauth.socialaccount.providers.oauth2.client import OAuth2Client
 from rest_auth.registration.views import SocialConnectView, SocialLoginView
 from rest_auth.social_serializers import TwitterConnectSerializer
 from allauth.account.models import EmailAddress, EmailConfirmationHMAC
+from rest_framework.permissions import AllowAny
 from rest_auth.views import (
     LoginView,
     PasswordResetView,
@@ -118,6 +119,8 @@ class LoginAPIView(LoginView):
 # nothing wrong on login i suppose
 
 class RegisterAPIView(RegisterView):
+    permission_classes = [AllowAny]
+    
     @sensitive_post_parameters_m
     def dispatch(self, *args, **kwargs):
         return super(RegisterAPIView, self).dispatch(*args, **kwargs)
