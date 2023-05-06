@@ -115,7 +115,7 @@ class LoginAPIView(LoginView):
         self.serializer.is_valid(raise_exception=True)
         self.login()
         return self.get_response()
-
+# nothing wrong on login i suppose
 
 class RegisterAPIView(RegisterView):
     @sensitive_post_parameters_m
