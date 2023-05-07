@@ -3,6 +3,7 @@ from django.shortcuts import get_object_or_404
 from rest_framework.response import Response
 from rest_framework import permissions, status, viewsets
 from rest_framework.views import APIView
+from django.views.decorators.csrf import csrf_protect, csrf_exempt
 from rest_framework.generics import (
     ListAPIView,
     RetrieveAPIView,
@@ -89,6 +90,8 @@ class CanselDeactivateUserView(APIView):
 # cheked
 class LoginAPIView(LoginView):
     queryset = ""
+    # permission_classes = (AllowAny,)
+    # serializer_class = LoginSerializer
 
     def get_response(self):
         serializer_class = self.get_response_serializer()
@@ -117,10 +120,11 @@ class LoginAPIView(LoginView):
         self.login()
         return self.get_response()
 # nothing wrong on login i suppose
-
+# django-rest-auth is no more lol need to remake
+@method_decorator(csrf_exempt, name='dispatch')
 class RegisterAPIView(RegisterView):
     permission_classes = [AllowAny]
-    
+
     @sensitive_post_parameters_m
     def dispatch(self, *args, **kwargs):
         return super(RegisterAPIView, self).dispatch(*args, **kwargs)
